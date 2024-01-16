@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+body {
+    padding: 10px;
+    background-color: #000014;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255, 217, 0, 0.61);
+    font-family: 'Croissant One', cursive;
+}
+
+.sol-converter {
+    margin: auto;
+    width: 87%;
+    margin-top: 80px;
+    background-color: #00006e;
+    padding: 10px 20px 50px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #1b37b4;
+    color: #b6bff3;
+    text-align: center;
+    margin-left: -10px;
+}
+
+.sol-converter:hover {
+    box-shadow: 1px 1px 15px 2px #1b37b4;
+}
+
+.convert-fields {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+button {
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 3px #cccccc;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+    background: none;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    padding-left: 5px;
+}
+
+
+#sol,
+#dollars {
+    width: 90%;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #c9c9fd;
+    border: 1px solid #d4d4fa;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.fa-arrow-right-arrow-left {
+    margin: 10px;
+}
+
+#sol i,
+#dollars i {
+    color: #000014;
+    margin: 0;
+}
+
+button:hover {
+    background-color: gold;
+    border: 1px solid gold;
+    box-shadow: 2px 2px 6px #e9e8e8;
+}
+
+#convert-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    width: 200px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+#progress {
+    display: none;
+    height: 20px;
+    margin: auto;
+    width: 20%;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.converted-result {
+    margin: auto;
+    height: 50px;
+    padding-top: 5px;
+    font-size: large;
+}
+
+.to-currency {
+    color: gold;
+    text-shadow: #1b37b4;
+    font-size: larger;
+}
+
+#arrows {
+    padding: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .sol-converter {
+        min-width: 800px;
+        width: 70%;
+        margin-left: auto;
+    }
+
+    .convert-fields {
+        flex-direction: row;
+    }
+
+    #sol,
+    #dollars {
+        width: 400px;
+        height: 55px;
+        justify-content: start;
+    }
+
+    .fa-arrow-right-arrow-left {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    #wallet {
+        top: 45px;
+        right: 50px;
+        padding: 10px;
+        bottom: auto;
+    }
+}
