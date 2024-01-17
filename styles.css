@@ -19,7 +19,7 @@ h4 {
     font-family: 'Croissant One', cursive;
 }
 
-.sol-converter {
+.crypto-converter {
     margin: auto;
     width: 87%;
     margin-top: 80px;
@@ -32,7 +32,7 @@ h4 {
     margin-left: -10px;
 }
 
-.sol-converter:hover {
+.crypto-converter:hover {
     box-shadow: 1px 1px 15px 2px #1b37b4;
 }
 
@@ -62,7 +62,7 @@ input[type="text"]:focus {
 }
 
 
-#sol,
+#crypto,
 #dollars {
     width: 90%;
     height: 60px;
@@ -80,7 +80,7 @@ input[type="text"]:focus {
     margin: 10px;
 }
 
-#sol i,
+#crypto i,
 #dollars i {
     color: #000014;
     margin: 0;
@@ -135,7 +135,7 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-    .sol-converter {
+    .crypto-converter {
         min-width: 800px;
         width: 70%;
         margin-left: auto;
@@ -145,7 +145,7 @@ label {
         flex-direction: row;
     }
 
-    #sol,
+    #crypto,
     #dollars {
         width: 400px;
         height: 55px;
