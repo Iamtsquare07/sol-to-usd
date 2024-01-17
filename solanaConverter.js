@@ -17,30 +17,30 @@ async function queryApi() {
   }
 }
 
-async function convertSolToDollars(value) {
+async function convertCryptoToDollars(value) {
   try {
     const response = await queryApi();
-    const solToUsdRate = response.data.solana.usd;
+    const cryptoToUsdRate = response.data.solana.usd;
 
-    const dollarsValue = value * solToUsdRate;
+    const dollarsValue = value * cryptoToUsdRate;
 
     return dollarsValue;
   } catch (error) {
-    console.error("Error converting sol to dollars:", error);
+    console.error("Error converting crypto to dollars:", error);
     return null;
   }
 }
 
-async function convertDollarsToSol(value) {
+async function convertDollarsToCrypto(value) {
   try {
     const response = await queryApi();
-    const solToUsdRate = response.data.solana.usd;
+    const cryptoToUsdRate = response.data.solana.usd;
 
-    const solValue = value / solToUsdRate;
+    const cryptoValue = value / cryptoToUsdRate;
 
-    return solValue;
+    return cryptoValue;
   } catch (error) {
-    console.error("Error converting sol to dollars:", error);
+    console.error("Error converting crypto to dollars:", error);
     return null;
   }
 }
@@ -55,32 +55,32 @@ function removeCurrencyAndNonNumeric(inputString) {
   return cleanedString;
 }
 
-let sol = document.getElementById("sol-input");
+let crypto = document.getElementById("crypto-input");
 let dollars = document.getElementById("usd-input");
 
-function convertSolToUsd() {
-  let solValue = removeCurrencyAndNonNumeric(sol.value);
-  if (!solValue) {
-    sol.focus();
+function convertCryptoToUsd() {
+  let cryptoValue = removeCurrencyAndNonNumeric(crypto.value);
+  if (!cryptoValue) {
+    crypto.focus();
     return;
   }
-  convertSolToDollars(solValue).then((dollar) => {
+  convertCryptoToDollars(cryptoValue).then((dollar) => {
     dollars.value = dollar.toFixed(2);
   });
 }
-sol.addEventListener("input", convertSolToUsd);
+crypto.addEventListener("input", convertCryptoToUsd);
 
-function convertUsdToSol() {
+function convertUsdToCrypto() {
   let dollarsValue = removeCurrencyAndNonNumeric(dollars.value);
   if (!dollarsValue) {
     dollars.focus();
     return;
   }
-  convertDollarsToSol(dollarsValue).then((solana) => {
-    sol.value = solana.toFixed(4);
+  convertDollarsToCrypto(dollarsValue).then((solana) => {
+    crypto.value = solana.toFixed(4);
   });
 }
-dollars.addEventListener("input", convertUsdToSol);
+dollars.addEventListener("input", convertUsdToCrypto);
 
 function isMobileDevice() {
   return window.innerWidth < 768;
@@ -111,12 +111,12 @@ if (isMobileDevice()) {
   arrows.innerHTML = `<i class="fa-solid fa-arrow-right-arrow-left"></i>`;
 }
 
-window.addEventListener("DOMContentLoaded", convertSolToUsd);
+window.addEventListener("DOMContentLoaded", convertCryptoToUsd);
 document.getElementById("convert-button").addEventListener("click", () => {
-  if (sol.value) {
-    convertSolToUsd();
+  if (crypto.value) {
+    convertCryptoToUsd();
   } else if (dollars.value) {
-    convertUsdToSol();
+    convertUsdToCrypto();
   } else {
     alert("Enter Solana or Dollars to convert");
   }
